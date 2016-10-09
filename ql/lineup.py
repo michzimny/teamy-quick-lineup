@@ -38,7 +38,7 @@ class TeamInSegment(object):
 class HomeTeamInSegment(TeamInSegment):
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(HomeTeamInSegment, self).__init__(*args, **kwargs)
 
     def get_paired_players_fields(self):
         return [
@@ -56,7 +56,7 @@ class HomeTeamInSegment(TeamInSegment):
 class AwayTeamInSegment(TeamInSegment):
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(AwayTeamInSegment, self).__init__(*args, **kwargs)
 
     def get_paired_players_fields(self):
         return [
