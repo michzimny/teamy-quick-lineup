@@ -21,7 +21,7 @@ class Console(object):
     def process_table(self, table):
         lineup = self.get_lineup(table)
         print(lineup.info)
-        print()
+        print('')
         # Python 2.x workaround
         global input
         try:
