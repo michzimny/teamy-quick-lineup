@@ -95,7 +95,7 @@ class Pair(object):
         return 'Team: %s - %s - %s' % (
             self.team.name,
             self.label,
-            [ p.info if p is not None else '<blank>' for p in self.players ]
+            ', '.join([ p.info if p is not None else '<blank>' for p in self.players ])
         )
 
     def set_player(self, name):
