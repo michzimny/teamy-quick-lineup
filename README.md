@@ -3,11 +3,11 @@ Command-line interface for line-up management in JFR Teamy.
 
 # Installation
 
-Prerequisites:
+Prerequisites on Windows:
 
-* Python 3
+* Python 3.4
 * pip
-* the prerequisites of mysqlclient-python - https://github.com/PyMySQL/mysqlclient-python
+* https://dev.mysql.com/downloads/connector/python/
 
 ```
 pip install -r requirements.txt
