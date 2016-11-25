@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.utils.functional import cached_property
+from cached_property import cached_property
 from .orm.models import Segment, Team, Player
 
 
