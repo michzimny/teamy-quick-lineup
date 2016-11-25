@@ -13,4 +13,7 @@ if len(sys.argv) == 4:
 else:
     table = None
 
-Console(round, segment, table).run()
+try:
+    Console(round, segment, table).run()
+except:
+    print('ERROR: %s' % sys.exc_info()[1])
