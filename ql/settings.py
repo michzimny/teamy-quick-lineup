@@ -1,4 +1,4 @@
-import json, sys
+import json, os, sys
 
 def _fetch_settings(config_path, constant_config, default_config):
     try:
@@ -8,10 +8,16 @@ def _fetch_settings(config_path, constant_config, default_config):
     except FileNotFoundError:
         with open(config_path, 'w') as new_config:
             json.dump(default_config, new_config)
-        print('Config file created, fill it up!')
+        print(
+            'Config file %s created, fill it up!' %
+            os.path.realpath(config_path)
+        )
         sys.exit()
     except ValueError:
-        print('Config file invalid, fix it!')
+        print(
+            'Config file %s invalid, fix it!' %
+            os.path.realpath(config_path)
+        )
         sys.exit(1)
 
 DATABASES = {
