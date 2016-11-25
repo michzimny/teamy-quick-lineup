@@ -1,4 +1,5 @@
 import readline
+import sys
 
 
 class Completer(object):
@@ -10,8 +11,15 @@ class Completer(object):
         readline.set_completer_delims('')  # allow options with whitespace
         readline.parse_and_bind('tab: complete')
 
+    def __encode_completion_string(self, s):
+        try:
+            return s.encode(sys.stdin.encoding) if isinstance(s, unicode) else s
+        except NameError: # Python 3.x does not have a 'unicode' type
+            pass
+        return s
+
     def __init__(self, options):
-        self.options = options
+        self.options = [self.__encode_completion_string(s) for s in options]
 
     def complete(self, text, state):
         text = text.lower()

@@ -21,7 +21,13 @@ class Console(object):
     def process_table(self, table):
         lineup = self.get_lineup(table)
         print(lineup.info)
-        print()
+        print('')
+        # Python 2.x workaround
+        global input
+        try:
+            input = raw_input
+        except NameError:
+            pass # if raw_input is not defined (Python 3.x), ignore it
         for team in lineup.teams:
             Completer.install_new_completer(team.player_names)
             for pair in team.pairs:
