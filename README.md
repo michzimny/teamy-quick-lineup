@@ -7,7 +7,6 @@ Prerequisites:
 
 * Python 3 (on Windows <= 3.4 due to the availability of MySQL connector)
 * pip
-* Linux environment: the prerequisites of mysqlclient-python - https://github.com/PyMySQL/mysqlclient-python
 * Windows environment: MySQL connector from Oracle, unavailable via PIP - https://dev.mysql.com/downloads/connector/python/
 
 ```
@@ -19,6 +18,8 @@ Where `PLATFORM` is either `windows` or `linux`.
 # Configuration
 
 Set MySQL settings in ql/settings.py.
+
+For Linux, you can leave the default `engine` property, for Windows, you have to change it to `mysql.connector.django` to use Oracle connector.
 
 # Usage
 
