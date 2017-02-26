@@ -1,3 +1,3 @@
-django
-mysqlclient
-readline
+django==1.10
+mysqlclient==1.3
+readline==6

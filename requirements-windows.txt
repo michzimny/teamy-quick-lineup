@@ -1,2 +1,2 @@
-django
-pyreadline
+django==1.10
+pyreadline==2
