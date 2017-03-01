@@ -34,3 +34,7 @@ python quick_lineup.py 3 2 1
 ```
 
 The script will iterate pair by pair in each match. It presents the currently assigned players and let you confirm them - pressing ENTER without any input - or change - providing player names (press TAB to autocomplete).
+
+# Build process
+
+See: [BUILD.md](BUILD.md)
