@@ -16,7 +16,10 @@ class Console(object):
 
     def run(self):
         for table in self.tables:
-            self.process_table(table)
+            try:
+                self.process_table(table)
+            except (EOFError, KeyboardInterrupt):
+                break
 
     def process_table(self, table):
         lineup = self.get_lineup(table)
