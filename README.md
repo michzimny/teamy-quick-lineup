@@ -15,16 +15,16 @@ pip install -r requirements-PLATFORM.txt
 
 Where `PLATFORM` is either `windows` or `linux`.
 
+You can also download the pre-built EXE release.
+
 # Configuration
 
-Set MySQL settings in ql/settings.py.
-
-For Linux, you can leave the default `engine` property, for Windows, you have to change it to `mysql.connector.django` to use Oracle connector.
+Set MySQL settings in config.json.
 
 # Usage
 
 ```
-python quick_lineup.py <round> <segment> [<start from table>]
+python quick_lineup.py [<round> <segment> [<start from table>]]
 ```
 
 For instance, to process round 3, segment 2, starting from table 1 run:
@@ -32,6 +32,8 @@ For instance, to process round 3, segment 2, starting from table 1 run:
 ```
 python quick_lineup.py 3 2 1
 ```
+
+If round and segment are missing, the script will ask for these values interactively.
 
 The script will iterate pair by pair in each match. It presents the currently assigned players and let you confirm them - pressing ENTER without any input - or change - providing player names (press TAB to autocomplete).
 
