@@ -4,6 +4,8 @@ def _fetch_settings(config_path, constant_config, default_config):
     try:
         config = constant_config.copy()
         config.update(json.load(open(config_path)))
+        if 'NAME' not in config:
+            config['NAME'] = input('Please enter database name: ')
         return config
     except FileNotFoundError:
         with open(config_path, 'w') as new_config:
